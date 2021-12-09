@@ -31,14 +31,6 @@ def parse_args():
 	return args
 
 
-def find_index(header, col_name):
-	try:
-		idx = header.index(col_name)
-	except:
-		idx = header.index(col_name.lower())
-	return idx
-
-
 def main(meta, sumstats, delimiter, snp, chr, pos, dir, out):
 	## Process meta analysis file
 	meta = str(meta)
@@ -68,9 +60,9 @@ def main(meta, sumstats, delimiter, snp, chr, pos, dir, out):
 		with open(sumstat, 'r') as f:
 			r = csv.reader(f, delimiter=delimiter[i])
 			header = r.__next__()
-			idx_chr = find_index(header, col_name=chr[i])
-			idx_pos = find_index(header, col_name=pos[i])
-			idx_snp = find_index(header, col_name=snp[i])
+			idx_chr = header.index(chr[i])
+			idx_pos = header.index(pos[i])
+			idx_snp = header.index(snp[i])
 			for row in r:
 				 if row[idx_snp] not in sumstat_snp2info:
 				 	sumstat_snp2info[row[idx_snp]] = (row[idx_chr], row[idx_pos])
@@ -97,8 +89,3 @@ def main(meta, sumstats, delimiter, snp, chr, pos, dir, out):
 if __name__ == '__main__':
 	args = parse_args()
 	main(meta=args.file, sumstats=args.sumstat, delimiter=args.delimiter, chr=args.chr, pos=args.pos, snp=args.snp, dir=args.dir, out=args.out)
-	
-	# Below is an example
-	"""
-	python step3.metal.py --file /data1/sanghyeon/tutorials/METAL/step2.doubleGC.1.tbl --sumstat /data1/sanghyeon/tutorials/METAL/examples/DGI_three_regions.txt /data1/sanghyeon/tutorials/METAL/examples/MAGIC_FUSION_Results.txt /data1/sanghyeon/tutorials/METAL/examples/magic_SARDINIA.tbl --delimiter TAB WHITESPACE TAB --chr CHR CHR CHR --pos POS POS POS --snp SNP SNP SNP --dir /data1/sanghyeon/tutorials/METAL/examples/ --dir /data1/sanghyeon/tutorials/METAL/ --out step3.Meta.Final
-	"""
