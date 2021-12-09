@@ -17,11 +17,11 @@ git clone https://github.com/sanghyeonp/METAL_matchSNP.git
 **--delimiter, -d** : Specify the delimiter for each summary statistics. If all summary statistics are tab separated, then it is not necessary to specify this argument. But if any one summary statistics are not tab separated, specify the delimiter for all summary statistics (default: None). The choices of delimiter is ['WHITESPACE', 'TAB', 'COMMA', 'SEMI-COLON', 'COLON'].
 * For example, if 3 summary statistics were used for meta-analysis and second summary statistics is comma separated, then speicfy their separation as follow => **-d TAB COMMA TAB**
 
-**--snp** : Specify the column name indicating rsID for each of summary statistics. It is not necessary to specify if all the summary statistics have rsID column name as SNP. It is case-insensitive(default: None).
+**--snp** : Specify the column name indicating rsID for each of summary statistics. It is not necessary to specify if all the summary statistics have rsID column named as SNP. It is case-insensitive(default: None).
 
-**--chr** : Specify the column name indicating CHROMOSOME for each of summary statistics. It is not necessary to specify if all the summary statistics have CHROMOSOME column name as CHR. It is case-insensitive(default: None).
+**--chr** : Specify the column name indicating CHROMOSOME for each of summary statistics. It is not necessary to specify if all the summary statistics have CHROMOSOME column named as CHR. It is case-insensitive(default: None).
 
-**--pos** : Specify the column name indicating POSITION for each of summary statistics. It is not necessary to specify if all the summary statistics have POSITION column name as POS. It is case-insensitive(default: None).
+**--pos** : Specify the column name indicating POSITION for each of summary statistics. It is not necessary to specify if all the summary statistics have POSITION column named as POS. It is case-insensitive(default: None).
 
 **--dir** : Specify the directory path where the output file will be saved. If not specified, it will be saved in the same directory as where the meta file is located (default=None).
 
