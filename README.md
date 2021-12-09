@@ -1,6 +1,6 @@
 # METAL_SNPmatching
 
-A script for matching the chromosome and the base position for SNPs that have been meta-analyzed using METAL tool.
+A script for matching the chromosome and the base position of SNPs that have been meta-analyzed using METAL tool.
 
 
 Clone the repository.
